@@ -1,0 +1,62 @@
+from netmiko import ConnectHandler
+
+# Define the device information for R1
+r1_device = {
+    'device_type': 'cisco_ios',
+    'ip': '30.0.0.2',
+    'username': 'ovica',
+    'password': 'ovica123',
+}
+
+# Define the device information for R2
+r2_device = {
+    'device_type': 'cisco_ios',
+    'ip': '20.0.0.1',
+    'username': 'ovica',
+    'password': 'ovica123',
+}
+
+# Define the device information for R3
+r3_device = {
+    'device_type': 'cisco_ios',
+    'ip': '30.0.0.1',
+    'username': 'ovica',
+    'password': 'ovica123',
+}
+
+# Define the OSPF configuration commands
+ospf_commands_r1 = [
+    'router ospf 10',
+    f'network 30.0.0.0 0.0.0.3 area 1',
+    f'network 192.168.70.0 0.0.0.255 area 1',
+    f'network 192.168.60.0 0.0.0.255 area 1',
+]
+
+ospf_commands_r2 = [
+    'router ospf 10',
+    f'network 192.168.50.0 0.0.0.255 area 1',
+    f'network 20.0.0.0 0.0.0.3 area 1',
+    f'network 192.168.40.0 0.0.0.255 area 1',
+]
+
+ospf_commands_r3 = [
+    'router ospf 10',
+    f'network 30.0.0.0 0.0.0.3 area 1',
+    f'network 20.0.0.0 0.0.0.3 area 1',
+  
+]
+
+# Connect to R1 and send the OSPF configuration commands
+with ConnectHandler(**r1_device) as r1:
+    output = r1.send_config_set(ospf_commands_r1)
+    print(f'R1 output:\n{output}')
+
+# Connect to R2 and send the OSPF configuration commands
+with ConnectHandler(**r2_device) as r2:
+    output = r2.send_config_set(ospf_commands_r2)
+    print(f'R2 output:\n{output}')
+
+# Connect to R3 and send the OSPF configuration commands
+with ConnectHandler(**r3_device) as r3:
+    output = r3.send_config_set(ospf_commands_r3)
+    print(f'R3 output:\n{output}')

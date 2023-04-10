@@ -1,0 +1,42 @@
+import time
+from netmiko import ConnectHandler
+
+# Define the device information
+device = {
+    'device_type': 'cisco_ios',
+    'ip': '192.168.50.2',
+    'username': 'ovica',
+    'password': 'ovica123',
+}
+
+# Define the configuration commands
+config_commands = [
+    'interface FastEthernet0/0',
+    'no shutdown',
+    'interface FastEthernet1/0',
+    'no shutdown',
+]
+
+# Define the ping command and host to ping
+ping_cmd = 'ping 192.168.70.2'
+
+
+# Connect to the device using SSH
+with ConnectHandler(**device) as net_connect:
+    # Send the configuration commands to the device
+    output = net_connect.send_config_set(config_commands)
+
+    # Print the output of the configuration commands
+    print(output)
+
+    # Send the ping command to the device
+    ping_output = net_connect.send_command(ping_cmd)
+
+    # Wait for 4 seconds
+    time.sleep(4)
+
+    # Send an empty line to the device to complete the ping command
+    ping_output += net_connect.send_command_timing('\n')
+
+    # Print the output of the ping command
+    print(ping_output)

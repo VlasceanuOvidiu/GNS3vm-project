@@ -1,0 +1,21 @@
+from netmiko import ConnectHandler
+
+# Define device information for R2
+r2 = {
+    "device_type": "cisco_ios",
+    "ip": "30.0.0.2",
+    "username": "ovica",
+    "password": "ovica123"
+}
+
+
+# Connect to R2 and configure ACL
+with ConnectHandler(**r2) as net_connect:
+    # Create ACL
+    acl_commands = [
+        f"access-list 1 deny 192.168.60.0 0.0.0.255",
+        f"interface FastEthernet2/0",
+        f"ip access-group 1 in"
+    ]
+    output = net_connect.send_config_set(acl_commands)
+    print("Access list configured successfully!")

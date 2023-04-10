@@ -1,0 +1,30 @@
+Mar 29 21:54:33.412 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Mar 29 21:54:33.423 HYPERVISOR: Started on IP = localhost, TCP port = 61741.
+Mar 29 21:54:33.845 HYPERVISOR: exec_cmd: hypervisor version 
+Mar 29 21:54:33.845 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Acer\AppData\Roaming\SPB_Data\GNS3\projects\Proiect Titus\project-files\dynamips 
+Mar 29 21:54:33.861 GENERAL: working_dir=C:\Users\Acer\AppData\Roaming\SPB_Data\GNS3\projects\Proiect Titus\project-files\dynamips
+Mar 29 21:54:33.862 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Acer\AppData\Roaming\SPB_Data\GNS3\projects\Proiect Titus\project-files\dynamips\04c7095b-4b80-4b71-b552-5364d799df98 
+Mar 29 21:54:33.862 GENERAL: working_dir=C:\Users\Acer\AppData\Roaming\SPB_Data\GNS3\projects\Proiect Titus\project-files\dynamips\04c7095b-4b80-4b71-b552-5364d799df98
+Mar 29 21:54:33.863 HYPERVISOR: exec_cmd: vm create R1 1 c7200 
+Mar 29 21:54:33.871 VM: VM R1 created.
+Mar 29 21:54:33.872 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5000 
+Mar 29 21:54:33.872 HYPERVISOR: exec_cmd: c7200 get_mac_addr R1 
+Mar 29 21:54:33.872 HYPERVISOR: exec_cmd: vm get_status R1 
+Mar 29 21:54:33.872 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 0 C7200-IO-FE 
+Mar 29 21:54:33.876 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/Acer/AppData/Roaming/SPB_Data/GNS3/images/IOS/c7200-adventerprisek9-mz.124-24.T5.image 
+Mar 29 21:54:33.876 HYPERVISOR: exec_cmd: vm get_status R1 
+Mar 29 21:54:33.876 HYPERVISOR: exec_cmd: vm set_idle_pc R1 0x606e0000 
+Mar 29 21:54:33.877 HYPERVISOR: exec_cmd: vm set_exec_area R1 64 
+Mar 29 21:54:33.877 HYPERVISOR: exec_cmd: vm set_ram R1 512 
+Mar 29 21:54:33.878 HYPERVISOR: exec_cmd: vm set_nvram R1 512 
+Mar 29 21:54:33.878 HYPERVISOR: exec_cmd: vm set_disk0 R1 0 
+Mar 29 21:54:33.963 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/Acer/AppData/Roaming/SPB_Data/GNS3/images/IOS/c7200-adventerprisek9-mz.124-24.T5.image 
+Mar 29 21:54:36.388 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/Acer/AppData/Roaming/SPB_Data/GNS3/images/IOS/c7200-adventerprisek9-mz.124-24.T5.image 
+Mar 29 21:54:43.824 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/Acer/AppData/Roaming/SPB_Data/GNS3/images/IOS/c7200-adventerprisek9-mz.124-24.T5.image 
+Mar 29 21:54:57.226 HYPERVISOR: exec_cmd: vm get_status R1 
+Mar 29 21:54:57.227 HYPERVISOR: exec_cmd: vm extract_config R1 
+Mar 29 21:54:57.229 HYPERVISOR: exec_cmd: vm delete R1 
+Mar 29 21:54:57.229 VM: VM R1 destroyed.
+Mar 29 21:54:57.231 HYPERVISOR: exec_cmd: hypervisor stop 
+Mar 29 21:54:57.363 HYPERVISOR: Stopped.
+Mar 29 21:54:57.363 GENERAL: reset done.
